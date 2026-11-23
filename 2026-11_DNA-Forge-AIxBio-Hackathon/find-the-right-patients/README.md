@@ -43,13 +43,13 @@ A web app with three tabs:
 
 ## Results
 
-| Task | Ours | Baseline |
-|---|---|---|
-| Patient search: mean F1 over 30 criteria | **1.00** (train) | 0.27 |
-| Organ identification: accuracy | **82%** (cross-validated) | ~70% |
-| Similar slides: precision at 1 / 5 / 10 | **0.85 / 0.79 / 0.74** | 0.8 / 0.7 / 0.6 |
+| Task | Official score (hidden test set) | Our estimate during development | Baseline |
+|---|---|---|---|
+| Patient search: mean F1 over 30 criteria | **1.000** (30 of 30 answered, mean count error 0.0%) | 1.00 (train) | 0.27 |
+| Organ identification: accuracy | **89.6%** (67 of 67 slides) | 82% (cross-validated) | ~70% |
+| Similar slides: precision at 1 / 5 / 10 | **0.881 / 0.893 / 0.887** | 0.85 / 0.79 / 0.74 | 0.8 / 0.7 / 0.6 |
 
-Scores in this table were measured on the training data and by cross-validation. The hidden answer key was scored by the organizers.
+Official scores come from the Biobase challenge self-evaluation on the hidden answer key. The development estimates were measured on the training data and by cross-validation, and they were conservative.
 
 ## Limitations
 - The reports are computer-generated and very regular, which is why perfect scores were possible on train. Real reports are much messier.
