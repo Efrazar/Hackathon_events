@@ -4,6 +4,10 @@
 
 > Research demo on synthetic pathology reports and de-identified slides. We make no medical claims, and this is not for clinical decisions.
 
+**My contribution:** this module is my own work within a larger team project. I designed and built the report parser, the criteria engine, the slide classification and similarity models, the bridge between them, and the Streamlit demo app.
+
+**Data:** the challenge data belongs to the organizers and is not included in this repository. The code and the summary scores are.
+
 ## In one sentence
 
 We turned free-text pathology reports into a searchable, explainable database for finding trial-eligible patients. We used AI "fingerprints" of tissue images to identify and match slides, and connected the two, so a trial team can go from *who qualifies* to *which tissue samples we can use*.
@@ -45,7 +49,7 @@ A web app with three tabs:
 | Organ identification: accuracy | **82%** (cross-validated) | ~70% |
 | Similar slides: precision at 1 / 5 / 10 | **0.85 / 0.79 / 0.74** | 0.8 / 0.7 / 0.6 |
 
-Official scores on the hidden answer key will be added after 4:00 PM.
+Scores in this table were measured on the training data and by cross-validation. The hidden answer key was scored by the organizers.
 
 ## Limitations
 - The reports are computer-generated and very regular, which is why perfect scores were possible on train. Real reports are much messier.
@@ -53,9 +57,11 @@ Official scores on the hidden answer key will be added after 4:00 PM.
 - When a whole lab is held out of training, accuracy drops sharply. Lab style is still the biggest open problem.
 
 ## Run it yourself
+The pipeline needs the challenge data packs, unzipped into a `data/` folder next to this one. They are not public, so without them only the code can be read.
+
 ```bash
 pip install -r requirements.txt
 ./run_all.sh              # rebuilds every result and submission file (~3 min, CPU only)
 cd app && streamlit run app.py
 ```
-Data layout, script-by-script details and deploy steps are in [TECHNICAL.md](TECHNICAL.md). An offline version of the demo is `out/static_demo.html`.
+Data layout, script-by-script details and deploy steps are in [TECHNICAL.md](TECHNICAL.md).
